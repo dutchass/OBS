@@ -63,7 +63,7 @@
 			<releases>
 			<enabled>true</enabled>
 			<updatePolicy>never</updatePolicy>
-			</releases>e
+			</releases>
 			<snapshots>
 			<enabled>false</enabled>
 			<updatePolicy>never</updatePolicy>
