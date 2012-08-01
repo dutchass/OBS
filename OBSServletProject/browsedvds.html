@@ -1,0 +1,30 @@
+<html>
+<style>
+h2{color:navy;font:700 20pt arial}
+h4 {color:brwon;font:700 11pt verdana}
+td {font:10pt verdana}
+a {font:12pt verdana;color:navy}
+
+</style>
+
+<body bgcolor="beige">
+
+<h2>Zoek naar beschikbare DVD's</h2>
+
+<form action="browsedvds.jsp" method="post" >
+Selecteer categorie : 
+<select name="categorie">
+<option value="allecategorien">Alle categorien
+<option value="thriller">Thriller
+<option value="humor">Humor
+<option value="actie">Actie 
+</select>
+<input type=submit value="Zoek">
+
+</form>
+<form>
+<a href="querydvds.jsp">Zoek DVD's </a> &nbsp;&nbsp;<a href="gohome.jsp">Home </a>
+</form>
+
+</body>
+</html>   

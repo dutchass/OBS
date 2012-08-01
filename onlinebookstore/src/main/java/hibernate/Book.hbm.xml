@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC        
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"        
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+	
+<hibernate-mapping package="hibernate">     
+	<class name="Book" table="BOOK">        
+		<id name="id" column="ID">            
+			<generator class="increment"/>       <!--  is increment if AI is selected in workbench or assigned if you assign your id yourself--> 
+		</id>        
+		<property name="imagebookurl" />        
+		<property name="title" column="title"/>
+		<property name="ISBNnumber" column="ISBNnumber"/> 
+	<set name="Author" table="AUTHOR">
+      <key column="ID"/>
+      <many-to-one column="ID" class="onlinebookstore.src.main.java.hibernate.Author"/>
+    </set>
+	</class>
+</hibernate-mapping>

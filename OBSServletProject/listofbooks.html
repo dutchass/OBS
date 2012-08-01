@@ -1,0 +1,52 @@
+<html>
+
+<style>
+h2{color:navy;font:700 20pt arial}
+h4 {color:brwon;font:700 11pt verdana}
+td {font:700 10pt verdana}
+a {font:700 10pt verdana;color:darkgreen}
+
+</style>
+
+<body bgcolor="beige">
+
+<h2>Zoeken naar een boek</h2>
+<form action="querybooks.jsp" method="post" >
+<table>
+<tr>
+<td>
+Categorie 
+<td> 
+<select name="categorie">
+<option value="allecategorien">Alle categorien
+<option value="romantiek">Romantiek
+<option value="actie">Actie
+<option value="avontuur">Avontuur 
+</select>
+<tr>
+<td>
+Titel bevat
+<td>
+<input type=text name=title size=45>
+</tr>
+
+<tr>
+<td>
+Naam auteur bevat
+<td>
+<input type=text size=20 name=author>
+Prijs vanaf
+<input type=text name=fromprice size=10>
+Tot
+<td>
+<input type=text name=toprice size=10>
+</tr>
+</table>
+<p>
+<input type=submit value="Zoeken">
+<a href="gohome.jsp">Terug naar home page </a>
+
+</form>
+
+</body>
+</html>   

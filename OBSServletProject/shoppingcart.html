@@ -1,0 +1,86 @@
+
+<style>
+td {font:10pt verdana}
+th {font:700 10pt verdana}
+h2 {font:700 16pt arial}
+a {font:700 10pt verdana;color:darkgreen}
+</style>
+
+
+<html>
+<body bgcolor="beige">
+
+
+<table border=1 border=1  width=100%>
+<tr style="font:700 11pt verdana;background-color:green;color:white">
+<td>
+Welkom <b><jsp:getProperty name="user" property="username"/> </b> 
+</tr>
+
+<tr style="font:10pt verdana">
+<td>
+<h2>Winkelwagen </h2>
+
+
+<table  width=100%>
+<tr>
+<td width=70%>
+
+<form action="home.jsp" method="get">
+<table border=1 style="background-color:lightgreen" width="100%">  
+<tr>
+<th>Titel
+<th>Prijs
+<th>Aantal
+<th>Bedrag
+<th>&nbsp;
+</tr>
+
+<tr>
+<td>
+<td align="right">
+<td align="center"><input type=text name=quantity  size=5 value=>
+<td align="right">
+<td align="center">
+</tr>
+
+<tr>
+<td colspan=5 style="text-align:center;font:700 12pt verdana;color:navy">
+Totaal bedrag : 
+</tr>
+
+
+</table>
+
+</td>
+<td>
+
+<input type=submit value="Update winkelwagen"  name="act">
+<p>
+<input type=submit value="Winkelwagen leegmaken"  name="act">
+<p>
+<input type=submit value="Afronden order"  name="act">
+
+</tr>
+</table>
+
+</form>
+  
+</td>
+</tr>
+
+<tr>
+<td>
+[<a href="changeprofile.jsp">Wijzig gebruikersprofiel </a>] &nbsp;&nbsp;
+[<a href="browsebooks.jsp">Overzicht boeken</a>] &nbsp;&nbsp;
+[<a href="querybooks.jsp">Zoek boek</a>] &nbsp;&nbsp;
+[<a href="browsedvds.jsp">Overzicht DVD's</a>] &nbsp;&nbsp;
+[<a href="querydvds.jsp">Zoek DVD</a>] &nbsp;&nbsp;
+[<a href=logout.jsp> Logout </a>]
+</td>
+</tr>
+
+</table>
+
+</body>
+</html>
