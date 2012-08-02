@@ -1,0 +1,15 @@
+# folders #
+**/target
+
+
+# eclipse #
+**/.settings
+
+
+# class files # 
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
