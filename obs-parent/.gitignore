@@ -1,8 +1,11 @@
 # folders #
+/target
+
 **/target
 
 
 # eclipse #
+/.settings
 **/.settings
 
 
