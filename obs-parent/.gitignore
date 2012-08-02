@@ -1,12 +1,12 @@
 # folders #
 /target
 
-**/target
+*/target
 
 
 # eclipse #
 /.settings
-**/.settings
+*/.settings
 
 
 # class files # 
