@@ -5,4 +5,4 @@
  * @author bas
  *
  */
-package nl.obs.web.jsp;
+package nl.obs.web.servlet;
