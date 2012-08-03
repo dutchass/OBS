@@ -16,7 +16,7 @@ public class Book {
     @Column(name="ID")
 	private int id; 
     
-    @Column(name="imagebookurl")
+    @Column(name="imageurl") // dit is even "zomaar" een aanpassing...
 	private String imagebookurl;
     
     @Column
