@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 public class Starter {
 	private final static Logger logger = LoggerFactory.getLogger(Starter.class);
 	
-	private final static String LOCATION = "C:\\Users\\bas\\workspace3\\OBS\\obs-parent\\obs-embedded\\target\\dependency\\obs-web-0.1.0-SNAPSHOT.war";
+	private final static String LOCATION = "C:\\Users\\Tim\\Documents\\GitHub\\OBS\\obs-parent\\obs-embedded\\target\\dependency\\obs-web-0.1.0-SNAPSHOT.war";
 
 	public static void main(String[] args) throws Exception {
 

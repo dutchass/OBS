@@ -1,0 +1,13 @@
+Projectstructuur onderverdeling
+
+obs-parent:
+		obs-core
+			- database entities
+			- database config
+			- managers
+			- models
+		obs-web
+			- servlets
+			- jsp
+		obs-embedded
+			- tomcat
