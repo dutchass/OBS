@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import nl.obs.core.db.entity.User;
+import nl.obs.core.db.manager.UserManager;
 import nl.obs.core.model.LoginService;
 
 /**
@@ -33,8 +34,12 @@ public class LoginServlet extends HttpServlet {
 		password= request.getParameter("password");
 		
 		//aanmaken van een business service (nieuwe java class) om te kijken of de username overeen komt met het password
-		LoginService loginService = new LoginService();
-		boolean result = loginService.authenticate(username, password);
+		//		LoginService loginService = new LoginService();
+		//		boolean result = loginService.authenticate(username, password);
+		
+		UserManager userManager = new UserManager();
+		boolean result = userManager.authenticate(username, password);
+		
 		
 		if (result) {
 			User user = loginService.getUserDetails(username);

@@ -1,15 +1,29 @@
 package nl.obs.core.db.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Login")
 public class User {
-	private String id;
+	
+	@Id    
+	@GeneratedValue (strategy=GenerationType.AUTO)
+	@Column(name="ID")
+	private int id;
+	@Column 
 	private String username;
+	@Column
 	private String password;
 
-
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getUsername() {
