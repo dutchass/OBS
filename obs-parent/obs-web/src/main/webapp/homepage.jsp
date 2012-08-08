@@ -16,14 +16,10 @@
 </head>
 <body>
 
-	<jsp:scriptlet>AuthenticationModel model = (AuthenticationModel) request
-					.getAttribute("auth");
-			User u = model.getUser();</jsp:scriptlet>
-
 	<H3>Login succesvol!</H3>
 
 	<p>
-		Welkom <jsp:expression>u.getUsername()</jsp:expression>!
+		Welkom ${auth.user.username} !
 	</p>
 </body>
 	</html>

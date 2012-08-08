@@ -6,6 +6,7 @@ public class AuthenticationModel {
 	
 	private User user;
 	private boolean authenticated = false;
+	
 	public User getUser() {
 		return user;
 	}
