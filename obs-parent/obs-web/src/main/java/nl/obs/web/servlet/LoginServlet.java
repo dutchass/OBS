@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import nl.obs.core.db.entity.User;
 import nl.obs.core.db.manager.UserManager;
-import nl.obs.core.model.LoginService;
+import nl.obs.core.model.AuthenticationModel;
 
 /**
  * Servlet implementation class LoginServlet
@@ -38,16 +37,12 @@ public class LoginServlet extends HttpServlet {
 		//		boolean result = loginService.authenticate(username, password);
 		
 		UserManager userManager = new UserManager();
-		boolean result = userManager.authenticate(username, password);
-		
-		
-		if (result) {
-			User user = null;// loginService.getUserDetails(username);
-			request.setAttribute("user",	user);
+		AuthenticationModel authenticationModel = userManager.authenticate(username, password);
+				
+		if (authenticationModel.isAuthenticated()) {			
+			request.setAttribute("auth",authenticationModel);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("homepage.jsp");
 			dispatcher.forward(request, response);
-			//			request.getSession().setAttribute("user", user);
-			//			response.sendRedirect("homepage.jsp");
 			return;
 		}
 		else {

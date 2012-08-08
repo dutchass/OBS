@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import nl.obs.core.db.entity.User;
+import nl.obs.core.model.AuthenticationModel;
 
 public class UserManager extends User{
 
@@ -14,16 +15,38 @@ public class UserManager extends User{
 	    
 	}
 	
-	public boolean authenticate(String username, String password){
+	public AuthenticationModel authenticate(String username, String password){
 		
-		if (password == null || password.trim() == "" || password != getPassword() ) { 
-			return false;
-			}
-			return true;
+		AuthenticationModel model = new AuthenticationModel();
+		
+		User u = getUserByUsername(username);
+		model.setUser(u);
+		
+		boolean authenticated = false;
+		if (u != null && password != null && !password.trim().isEmpty()) {
+			authenticated = password.equals(u.getPassword());
+		}
+		model.setAuthenticated(authenticated);
+		
+		return model;
+	}
+	
+	public User getUserByUsername(String username) {
+		User u = new User();
+		u.setUsername(username);
+		u.setId(0);
+		u.setPassword("1234");
+		
+		return u;
 	}
 	
 	public User getUser(int id) {
-		return null;
+		User u = new User();
+		u.setUsername("piet");
+		u.setId(id);
+		u.setPassword("1234");
+		
+		return u;
 	}
 	
 	public User saveUser(User user) {
