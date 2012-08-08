@@ -12,8 +12,7 @@ public class Starter {
 	private final static Logger logger = LoggerFactory.getLogger(Starter.class);
 	
 	private final static String LOCATION = "/war/obs-web-0.1.0-SNAPSHOT.war";
-	private final static String TOMCAT = "/repo";
-
+	
 	
 	public static void main(String[] args) throws Exception {
         
@@ -27,7 +26,7 @@ public class Starter {
         	throw new IllegalArgumentException("the property \"app.base.dir\" is not set. Make sure to set it using -Dapp.base.dir=<BASEDIR> .");
         }
         
-        TomcatWrapper tomcat = new TomcatWrapper(webPort, baseDir+TOMCAT);        
+        TomcatWrapper tomcat = new TomcatWrapper(webPort, baseDir+"/war/", System.getProperty("java.io.tmpdir"));        
         tomcat.addWebApp("/", new File(baseDir+LOCATION).getAbsolutePath());
         
         logger.info("configuring app with basedir: {}" , new File(baseDir+LOCATION).getAbsolutePath());

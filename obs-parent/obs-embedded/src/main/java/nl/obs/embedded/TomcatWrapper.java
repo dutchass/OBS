@@ -23,20 +23,24 @@ public class TomcatWrapper {
 	
 	private final Logger log = LoggerFactory.getLogger(TomcatWrapper.class);
 
-	public TomcatWrapper(int port, String baseDir) {
+	public TomcatWrapper(int port, String baseDir, String workDir) {
 		tomcat = new Tomcat();
 		tomcat.enableNaming();
-
+		tomcat.setBaseDir(baseDir);
 		tomcat.setPort(port);
+		
 
 		StandardHost stdHost = (StandardHost) tomcat.getHost();
-		stdHost.setUnpackWARs(false);
+		stdHost.setUnpackWARs(true);
 		stdHost.setAutoDeploy(true);
 		stdHost.setDeployOnStartup(true);
 		stdHost.setDeployXML(true);
+		stdHost.setAppBase(baseDir);
+		
+		stdHost.setWorkDir(workDir);
 
 		tomcat.setHost(stdHost);
-		tomcat.setBaseDir(baseDir);
+		
 	}
 	
 	public void start() throws LifecycleException {
