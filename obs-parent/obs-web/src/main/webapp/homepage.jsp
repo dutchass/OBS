@@ -20,7 +20,7 @@
 <body>
 
 	<c:choose>
-		<c:when test="(${auth.authenticated})">
+		<c:when test="${auth.authenticated == true}">
 		Welkom ${auth.user.username} !
 		</c:when>
 		<c:otherwise>
