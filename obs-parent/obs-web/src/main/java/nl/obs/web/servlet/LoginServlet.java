@@ -32,24 +32,20 @@ public class LoginServlet extends HttpServlet {
 		username= request.getParameter("username");
 		password= request.getParameter("password");
 		
-		//aanmaken van een business service (nieuwe java class) om te kijken of de username overeen komt met het password
-		//		LoginService loginService = new LoginService();
-		//		boolean result = loginService.authenticate(username, password);
-		
 		UserManager userManager = new UserManager();
 		AuthenticationModel authenticationModel = userManager.authenticate(username, password);
+		
+		//set the attr in the session, since we want this accross all pages.
+		request.getSession().setAttribute("auth",authenticationModel);
+		
 				
 		if (authenticationModel.isAuthenticated()) {			
-			request.setAttribute("auth",authenticationModel);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("homepage.jsp");
-			dispatcher.forward(request, response);
+			response.sendRedirect("homepage.jsp");
 			return;
 		}
 		else {
 			response.sendRedirect("login.jsp");
-		}
-		
-		
+			return;
+		}		
 	}
-
 }
