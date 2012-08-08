@@ -42,6 +42,7 @@
 			<artifactId>tomcat-dbcp</artifactId>
 			<version>${tomcat.version}</version>
 		</dependency>
+		
 
 		<!-- HIBERNATE JPA2 -->
 		<dependency>
@@ -73,6 +74,11 @@
 			<type>war</type>
 		</dependency>
 
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>

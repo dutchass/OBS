@@ -22,6 +22,18 @@ import nl.obs.core.model.AuthenticationModel;
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp"); //give login view
+		dispatcher.forward(req, resp);
+		return;
+	}
+
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -37,14 +49,14 @@ public class LoginServlet extends HttpServlet {
 		
 		//set the attr in the session, since we want this accross all pages.
 		request.getSession().setAttribute("auth",authenticationModel);
-		
-				
+								
 		if (authenticationModel.isAuthenticated()) {			
-			response.sendRedirect("homepage.jsp");
+			response.sendRedirect("/");	//redirect to homepage controller
 			return;
 		}
 		else {
-			response.sendRedirect("login.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp"); //give login view
+			dispatcher.forward(request, response);
 			return;
 		}		
 	}

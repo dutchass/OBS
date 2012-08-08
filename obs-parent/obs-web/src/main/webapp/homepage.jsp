@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
 	<jsp:directive.page import="nl.obs.core.model.AuthenticationModel" />
 	<jsp:directive.page language="java" import="nl.obs.core.db.entity.User"
-		contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" />
+		contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" />	
+	
 	<jsp:text>
 		<![CDATA[ <?xml version="1.0" encoding="ISO-8859-1" ?> ]]>
 	</jsp:text>
@@ -16,11 +19,17 @@
 </head>
 <body>
 
-	<H3>Login succesvol!</H3>
-
-	<p>
+	<c:choose>
+		<c:when test="(${auth.authenticated})">
 		Welkom ${auth.user.username} !
-	</p>
+		</c:when>
+		<c:otherwise>
+		Click <a href="/login">here</a> to login.
+		</c:otherwise>
+	</c:choose>
+
+
+	<p></p>
 </body>
 	</html>
 </jsp:root>
