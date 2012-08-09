@@ -15,10 +15,10 @@ import nl.obs.core.model.AuthenticationModel;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet(
-		name="LoginServlet",
-		urlPatterns={"/login"}
-)
+//@WebServlet(
+//		name="LoginServlet",
+//		urlPatterns={"/login"}
+//)
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,8 +28,7 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp"); //give login view
-		dispatcher.forward(req, resp);
+		
 		return;
 	}
 

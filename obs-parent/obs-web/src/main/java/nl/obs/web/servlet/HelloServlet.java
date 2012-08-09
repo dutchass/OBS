@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import nl.obs.core.db.entity.Book;
 import nl.obs.core.db.manager.BookManager;
 
-@WebServlet(
-        name = "HelloServlet", 
-        urlPatterns = {"/hello"}
-    )
+//@WebServlet(
+//        name = "HelloServlet", 
+//        urlPatterns = {"/hello"}
+//    )
 public class HelloServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 6663501646932303333L;
