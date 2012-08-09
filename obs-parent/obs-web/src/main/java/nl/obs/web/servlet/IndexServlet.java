@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(
         name = "IndexServlet", 
-        urlPatterns = {"/"}
+        urlPatterns = {""}
     )
 public class IndexServlet extends HttpServlet {
 
@@ -20,6 +20,7 @@ public class IndexServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("homepage.jsp"); //give login view
 		dispatcher.forward(req, resp);
 		return;
