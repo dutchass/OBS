@@ -1,8 +1,8 @@
-package nl.obs.web.command;
+package nl.obs.web.dispatch;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class SimpleResult implements Result {
+public class SimpleResult implements DispatchResult {
 
 	private String location;
 	private HttpServletRequest request;

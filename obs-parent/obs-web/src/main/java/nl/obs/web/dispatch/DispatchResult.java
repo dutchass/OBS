@@ -1,8 +1,8 @@
-package nl.obs.web.command;
+package nl.obs.web.dispatch;
 
 import javax.servlet.http.HttpServletRequest;
 
-public interface Result {
+public interface DispatchResult {
 
 	public HttpServletRequest getRequest();
 	public String getLocation();

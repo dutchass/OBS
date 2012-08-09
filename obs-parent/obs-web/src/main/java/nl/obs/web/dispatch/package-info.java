@@ -5,4 +5,4 @@
  * @author bas
  *
  */
-package nl.obs.web.command;
+package nl.obs.web.dispatch;

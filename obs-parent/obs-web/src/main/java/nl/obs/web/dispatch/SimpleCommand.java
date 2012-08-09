@@ -1,10 +1,10 @@
-package nl.obs.web.command;
+package nl.obs.web.dispatch;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class SimpleCommand implements Command {
+public class SimpleCommand implements DispatchCommand {
 
 	private String location;
 	
@@ -13,7 +13,7 @@ public class SimpleCommand implements Command {
 	}
 
 	@Override
-	public Result execute(HttpServletRequest request,
+	public DispatchResult execute(HttpServletRequest request,
 			HttpServletResponse response) {
 		return new SimpleResult(location,request);
 	}
