@@ -11,36 +11,45 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * Servlet Filter implementation class FrontFilter
- */
 @WebFilter("/*")
 public class IndexFilter implements Filter {
 
-	/**
-	 * @see Filter#destroy()
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javax.servlet.Filter#destroy()
 	 */
 	public void destroy() {
 	}
 
-	/**
-	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest,
+	 * javax.servlet.ServletResponse, javax.servlet.FilterChain)
 	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
-		String path = req.getRequestURI().substring(req.getContextPath().length());
-				
-		if (path.startsWith("/js") || path.startsWith("/css") || path.startsWith("/WEB") || path.startsWith("/META") || path.startsWith("/includes")) {
-		    // Just let container's default servlet do its job.
-		    chain.doFilter(request, response);
+		String path = req.getRequestURI().substring(
+				req.getContextPath().length());
+
+		if (path.startsWith("/js") || path.startsWith("/css")
+				|| path.startsWith("/WEB") || path.startsWith("/META")
+				|| path.startsWith("/includes") || path.startsWith("/favicon.ico") ) {
+			// Just let container's default servlet do its job.
+			chain.doFilter(request, response);
 		} else {
-		    // Delegate to your front controller.
-		    request.getRequestDispatcher("/pages/"+path).forward(request, response);
+			// Delegate to your front controller.
+			request.getRequestDispatcher("/pages/" + path).forward(request,
+					response);
 		}
 	}
 
-	/**
-	 * @see Filter#init(FilterConfig)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javax.servlet.Filter#init(javax.servlet.FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
 	}

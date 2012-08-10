@@ -9,20 +9,21 @@
 <obs:header title="Online Book Store"></obs:header>
 <body>
 
+	<div style="width: 50%; margin: 0px auto;">
+		<c:if test="${(!auth.authenticated) and (auth.user != null)}">
+			<obs:message type="ERROR">Wrong username or password</obs:message>
+		</c:if>
 
-	<c:if test="${(!auth.authenticated) and (auth.user != null)}">
-		<obs:message type="ERROR">Wrong username or password</obs:message>
-	</c:if>
+		<form action="/login" method="post">
 
-	<form action="/login" method="post">
-		
-			
-		<!--  in action= "controller  servlet" die de login method afhandelt in de LoginServlet -->
-		<br /> Gebruikersnaam <input class=".ui-corner-all" type="text" name="username" /> <br />
-		Wachtwoord <input class=".ui-corner-all" type="password" name="password" /> <br /> <br />
-		<input  type="submit" value="Inloggen" /> <input type="submit"
-			value="Annuleren" />
-	</form>
 
+			<!--  in action= "controller  servlet" die de login method afhandelt in de LoginServlet -->
+			<br /> Gebruikersnaam <input class=".ui-corner-all" type="text"
+				name="username" /> <br /> Wachtwoord <input class=".ui-corner-all"
+				type="password" name="password" /> <br /> <br /> <input
+				type="submit" value="Inloggen" /> <input type="submit"
+				value="Annuleren" />
+		</form>
+	</div>
 </body>
 </html>

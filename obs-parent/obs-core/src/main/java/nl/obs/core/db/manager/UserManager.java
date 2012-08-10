@@ -8,13 +8,8 @@ import nl.obs.core.model.AuthenticationModel;
 
 public class UserManager extends User{
 
-	private EntityManagerFactory emf;
-	
-	public UserManager() {
-		emf = javax.persistence.Persistence.createEntityManagerFactory("tibri");
-	    
-	}
-	
+	private static EntityManagerFactory emf = javax.persistence.Persistence.createEntityManagerFactory("tibri");
+		
 	public AuthenticationModel authenticate(String username, String password){
 		
 		AuthenticationModel model = new AuthenticationModel();

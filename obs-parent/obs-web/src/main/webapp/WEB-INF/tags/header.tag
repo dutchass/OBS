@@ -12,7 +12,7 @@
 </script>
 <style type="text/css">
 body {
-	font: 62.5% "Trebuchet MS", sans-serif;
+	font: 95% "Trebuchet MS", sans-serif;
 	margin: 50px;
 }
 </style>

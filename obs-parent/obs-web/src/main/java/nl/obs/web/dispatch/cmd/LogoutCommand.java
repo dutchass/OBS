@@ -1,4 +1,4 @@
-package nl.obs.web.command.impl;
+package nl.obs.web.dispatch.cmd;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,8 +13,9 @@ public class LogoutCommand implements DispatchCommand {
 	public DispatchResult execute(HttpServletRequest request,
 			HttpServletResponse response) {
 		
-		request.getSession().removeAttribute("auth");		
-		return new SimpleResult("/homepage.jsp", request);
+		request.getSession().removeAttribute("auth");	
+		request.setAttribute("redirectMessage", "You are logged out. Redirecting you, please wait...");
+		response.setHeader("Refresh", "5;url=/");
+		return new SimpleResult(request,response, "/redirect.jsp");
 	}
-
 }
