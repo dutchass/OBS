@@ -11,7 +11,7 @@
 
 	<div style="width: 50%; margin: 0px auto;">
 		<c:if test="${(!auth.authenticated) and (auth.user != null)}">
-			<obs:message type="ERROR">Wrong username or password</obs:message>
+			<obs:message type="ERROR">Verkeerde gebruikersnaam of wachtwoord!</obs:message>
 		</c:if>
 
 		<form action="/login" method="post">
