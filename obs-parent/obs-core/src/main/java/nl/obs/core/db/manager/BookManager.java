@@ -14,7 +14,7 @@ public class BookManager {
 	public BookManager() {
 		emf = javax.persistence.Persistence.createEntityManagerFactory("tibri");
 	    
-	}
+	}	
 	
 	public Book getBook(String title) {
 		return null;
