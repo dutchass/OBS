@@ -1,9 +1,11 @@
 package nl.obs.core.db.manager;
 
+import java.util.List;
+import java.util.Vector;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.transaction.Transaction;
 
 import nl.obs.core.db.entity.Book;
 
@@ -16,8 +18,49 @@ public class BookManager {
 	    
 	}	
 	
+	
+	public List<Book> getAllBooks(){
+	    
+	    Vector<Book> books = new Vector<Book>();
+	    books.add(getBookByTitle("piet1"));
+	    books.add(getBookByTitle("piet2"));
+	    books.add(getBookByTitle("piet3"));
+	    books.add(getBookByTitle("piet4"));
+//	    	EntityManager em = emf.createEntityManager();
+//		EntityTransaction tx = em.getTransaction();
+//		
+//		tx.begin();
+//		List<Book>  l = em.createQuery("select from Book").getResultList();
+//		tx.commit();
+//		
+//		return l;
+	    return books;
+	}
+	
+	
+	
 	public Book getBook(String title) {
 		return null;
+	}
+	
+	
+	public Book getBookByTitle(String title) {
+		Book b = new Book();
+		b.setTitle(title);
+		b.setId((int)(Math.random()*10));
+		b.setImagebookurl("HeadfirstJava.jpg");
+		b.setISBNnumber((int)(Math.random()*16120));
+		return b;
+	}
+	
+	public Book getBook(int id) {
+	    	Book b = new Book();
+	    	b.setTitle("Head First Java");
+		b.setId(0);
+		b.setImagebookurl("HeadfirstJava.jpg");
+		b.setISBNnumber(123456789);
+		
+		return b;
 	}
 	
 	public Book saveBook(Book book) {
@@ -30,4 +73,7 @@ public class BookManager {
 		
 		return book;
 	}
+
+
+
 }
