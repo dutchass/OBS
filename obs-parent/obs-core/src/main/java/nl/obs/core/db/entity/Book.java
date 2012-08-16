@@ -24,6 +24,12 @@ public class Book {
     
     @Column
 	private int ISBNnumber;
+    
+    @Column(name="Auteur")
+    private String author;
+    
+    @Column
+    private int price;
         
     
 	public int getId() {
@@ -57,5 +63,23 @@ public class Book {
 	public void setISBNnumber(int iSBNnumber) {
 		ISBNnumber = iSBNnumber;
 	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+	
 
 }

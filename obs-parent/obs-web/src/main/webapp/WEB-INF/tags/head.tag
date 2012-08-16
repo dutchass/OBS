@@ -7,6 +7,7 @@
 <link type="text/css" href="/css/start/jquery-ui-1.8.22.custom.css"
 	rel="stylesheet" />
 <script type="text/javascript" src="/js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/js/jquery.ae.image.resize.js"></script>
 <script type="text/javascript">
 	
 </script>

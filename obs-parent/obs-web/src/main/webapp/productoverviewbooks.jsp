@@ -6,35 +6,48 @@
 <!DOCTYPE html />
 
 <html>
-	<body>
-		<div class="tableWrapper">
+<obs:head title="Productoverzicht boeken"></obs:head>
+<body>
+	<script type="text/javascript">
+		$(function() {
+			$(".resizeme").aeImageResize({
+				width : 75
+			});
+		});
+	</script>
+
+	<div class="tableWrapper">
 		<table id="myTable">
-		   <thead>
-		     <tr>
-		        <th colspan="4">Productoverzicht boeken</th>
-		     </tr>
-		     <tr> 
-		     	<th></th>
-		     	<th>Titel</th>
-		     	<th>ISBN</th>
-		     	<th>Prijs</th>
-		     </tr>
-		   </thead>
-		
-		   <tbody id="myTbody">
-		   <c:forEach items="${bookList}" var="book"> 
-		   <tr> 
-		   	<td><img src="${book.imagebookurl}"/></td>
-		   	<td>${book.title}</td>
-		   	<td>${book.ISBNnumber}</td>
-		   	<td>122</td>
-		   </tr>
-		   </c:forEach>
-		   
-		   
-		   </tbody>
+			<thead>
+				<tr>
+					<th colspan="5">Productoverzicht boeken</th>
+				</tr>
+				<tr>
+					<th></th>
+					<th>Titel</th>
+					<th>Auteur</th>
+					<th>ISBN</th>
+					<th>Prijs</th>
+				</tr>
+			</thead>
+
+			<tbody id="myTbody">
+				<c:forEach items="${bookList}" var="book">
+					<tr>
+						<td><img class="resizeme" src="/WEB-IMAGES/${book.imagebookurl}" /></td>
+						<td>${book.title}</td>
+						<td>${book.author}</td>
+						<td>${book.ISBNnumber}</td>
+						<td>${book.price}</td>
+					</tr>
+				</c:forEach>
+
+
+			</tbody>
 		</table>
-		</div>
-	</body>
+	</div>
+	
+	
+</body>
 </html>
 

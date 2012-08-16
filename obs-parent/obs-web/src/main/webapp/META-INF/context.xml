@@ -10,5 +10,5 @@
    password="makkelijk" 
    type="javax.sql.DataSource" 
    url="jdbc:mysql://localhost:3306/tibri" 
-   username="admin"/>
+   username="root"/>
 </Context>
