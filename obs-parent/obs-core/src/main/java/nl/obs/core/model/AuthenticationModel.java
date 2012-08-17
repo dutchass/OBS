@@ -18,6 +18,5 @@ public class AuthenticationModel {
 	}
 	public void setAuthenticated(boolean authenticated) {
 		this.authenticated = authenticated;
-	}
-	
+	}	
 }

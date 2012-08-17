@@ -1,58 +1,28 @@
 package nl.obs.core.db.manager;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
+import nl.obs.core.db.entity.Customer;
 import nl.obs.core.db.entity.User;
 import nl.obs.core.model.AuthenticationModel;
+import nl.obs.core.model.CustomerAuthenticationModel;
 
-public class UserManager extends User{
+public class UserManager extends User{	
+		
+	public static AuthenticationModel authenticateCustomer(String username, String password){
+		
+		CustomerAuthenticationModel model = new CustomerAuthenticationModel();
+		
+		Customer c = CustomerManager.getCustomerByUsername(username);
 
-	private static EntityManagerFactory emf = javax.persistence.Persistence.createEntityManagerFactory("tibri");
-		
-	public AuthenticationModel authenticate(String username, String password){
-		
-		AuthenticationModel model = new AuthenticationModel();
-		
-		User u = getUserByUsername(username);
-		model.setUser(u);
-		
+		model.setUser(c);
+		model.setCustomer(c);
+				
 		boolean authenticated = false;
-		if (u != null && password != null && !password.trim().isEmpty()) {
-			authenticated = password.equals(u.getPassword());
+		if (c != null && password != null && !password.trim().isEmpty()) {
+			authenticated = password.equals(c.getPassword());
 		}
 		model.setAuthenticated(authenticated);
 		
 		return model;
-	}
-	
-	public User getUserByUsername(String username) {
-		User u = new User();
-		u.setUsername(username);
-		u.setId(0);
-		u.setPassword("1234");
-		
-		return u;
-	}
-	
-	public User getUser(int id) {
-		User u = new User();
-		u.setUsername("piet");
-		u.setId(id);
-		u.setPassword("1234");
-		
-		return u;
-	}
-	
-	public User saveUser(User user) {
-		EntityManager em = emf.createEntityManager();
-		EntityTransaction tx = em.getTransaction();
-		
-		tx.begin();
-		em.persist(user);
-		tx.commit();
-		
-		return user;
 	}
 	
 }

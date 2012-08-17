@@ -5,18 +5,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="Login")
+@Entity(name="Login")
+@Inheritance(strategy=InheritanceType.JOINED)
 public class User {
 	
 	@Id    
 	@GeneratedValue (strategy=GenerationType.AUTO)
 	@Column(name="ID")
 	private int id;
+	
 	@Column 
 	private String username;
+	
 	@Column
 	private String password;
 

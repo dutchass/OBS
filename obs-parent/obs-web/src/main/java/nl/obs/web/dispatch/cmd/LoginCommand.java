@@ -30,8 +30,8 @@ public class LoginCommand implements DispatchCommand {
 		// DB
 		if ((authenticationModel == null || !authenticationModel
 				.isAuthenticated()) && username != null) {
-			UserManager userManager = new UserManager(); // get the usermanager
-			authenticationModel = userManager.authenticate(username, password); // do
+			
+			authenticationModel = UserManager.authenticateCustomer(username, password); // do
 																				// db
 																				// work
 		}

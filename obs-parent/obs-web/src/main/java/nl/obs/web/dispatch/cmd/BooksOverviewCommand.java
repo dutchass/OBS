@@ -16,10 +16,8 @@ public class BooksOverviewCommand implements DispatchCommand {
     @Override
     public DispatchResult execute(HttpServletRequest request,
 	    HttpServletResponse response) {
-	
-	BookManager bm = new BookManager();
-	
-	List<Book> bookList = bm.getAllBooks();
+		
+	List<Book> bookList = BookManager.getAllBooks();
 	request.setAttribute("bookList", bookList);
 	
 	return new SimpleResult(request,response, "/productoverviewbooks.jsp");
