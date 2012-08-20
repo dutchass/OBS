@@ -48,7 +48,7 @@ public class DispatchHelper {
 	 */
 	public static void forward(DispatchResult result) throws ServletException, IOException {
 		HttpServletRequest request = result.getRequest();		
-		RequestDispatcher dispatcher = request.getRequestDispatcher(result.getLocation()); //give appropriate view
+		RequestDispatcher dispatcher = request.getRequestDispatcher(result.getViewLocation()); //give appropriate view
 		dispatcher.forward(request, result.getResponse());
 	}
 	

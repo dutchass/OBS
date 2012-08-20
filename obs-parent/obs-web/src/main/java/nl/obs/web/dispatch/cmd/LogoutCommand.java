@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import nl.obs.web.dispatch.DispatchCommand;
 import nl.obs.web.dispatch.DispatchResult;
-import nl.obs.web.dispatch.SimpleResult;
+import nl.obs.web.dispatch.RedirectResult;
 
 public class LogoutCommand implements DispatchCommand {
 
@@ -13,9 +13,6 @@ public class LogoutCommand implements DispatchCommand {
 	public DispatchResult execute(HttpServletRequest request,
 			HttpServletResponse response) {
 		
-		request.getSession().removeAttribute("auth");	
-		request.setAttribute("redirectMessage", "You are logged out. Redirecting you, please wait...");
-		response.setHeader("Refresh", "5;url=/");
-		return new SimpleResult(request,response, "/redirect.jsp");
+		return new RedirectResult(request,response, "U bent uitgelogd, een ogenblik geduld a.u.b..." , "/");
 	}
 }

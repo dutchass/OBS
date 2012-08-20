@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity(name = "order_has_book")
 public class OrderedBook {
@@ -14,6 +16,18 @@ public class OrderedBook {
 	private OrderBookId orderBookId;
 	@Column
 	private int amount;
+	
+	@ManyToOne
+	@JoinColumn(name="Book_ID",insertable=false, updatable=false)
+	private Book book;
+		
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
 
 	public OrderBookId getOrderBookId() {
 		return orderBookId;

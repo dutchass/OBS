@@ -2,7 +2,6 @@ package nl.obs.web.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +15,7 @@ import nl.obs.web.dispatch.SimpleCommand;
 import nl.obs.web.dispatch.cmd.BooksOverviewCommand;
 import nl.obs.web.dispatch.cmd.LoginCommand;
 import nl.obs.web.dispatch.cmd.LogoutCommand;
+import nl.obs.web.dispatch.cmd.OrderOverviewCommand;
 
 /**
  * The Class IndexServlet.
@@ -46,6 +46,8 @@ public class IndexServlet extends HttpServlet {
 									  // the
 									  // command
 	dispatchHelper.register("/books/", new BooksOverviewCommand());
+	dispatchHelper.register("/orders/", new OrderOverviewCommand());
+	
 	}
 
     /**

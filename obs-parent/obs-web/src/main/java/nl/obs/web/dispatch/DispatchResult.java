@@ -24,6 +24,13 @@ public interface DispatchResult {
 	 *
 	 * @return the location
 	 */
-	public String getLocation();
+	public String getViewLocation();
+	
+	/**
+	 * Gets the redirect location.
+	 *
+	 * @return the redirect location
+	 */
+	public String getRedirectLocation();
 
 }

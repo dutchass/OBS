@@ -5,7 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class SimpleResult implements DispatchResult {
 
-	private String location;
+	private String viewLocation;
+	private String redirectLocation;
 	private HttpServletRequest request;
 	private HttpServletResponse response;
 	
@@ -32,7 +33,7 @@ public class SimpleResult implements DispatchResult {
 		if(response == null)
 			throw new IllegalArgumentException("response can not be null");
 		
-		this.location = location;
+		this.viewLocation = location;
 		this.request = request;
 		this.response = response;
 	}
@@ -49,8 +50,8 @@ public class SimpleResult implements DispatchResult {
 	 * @see nl.obs.web.dispatch.DispatchResult#getLocation()
 	 */
 	@Override
-	public String getLocation() {
-		return location;
+	public String getViewLocation() {
+		return viewLocation;
 	}
 
 	/**
@@ -58,8 +59,8 @@ public class SimpleResult implements DispatchResult {
 	 *
 	 * @param location the new location
 	 */
-	public void setLocation(String location) {
-		this.location = location;
+	public void setViewLocation(String location) {
+		this.viewLocation = location;
 	}
 
 	public void setRequest(HttpServletRequest request) {
@@ -81,6 +82,14 @@ public class SimpleResult implements DispatchResult {
 	 */
 	public void setResponse(HttpServletResponse response) {
 		this.response = response;
-	}	
-	
+	}
+
+	@Override
+	public String getRedirectLocation() {	
+		return redirectLocation;
+	}
+
+	public void setRedirectLocation(String redirectLocation) {
+		this.redirectLocation = redirectLocation;
+	}
 }

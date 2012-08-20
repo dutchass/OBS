@@ -7,6 +7,7 @@ import nl.obs.core.db.manager.UserManager;
 import nl.obs.core.model.AuthenticationModel;
 import nl.obs.web.dispatch.DispatchCommand;
 import nl.obs.web.dispatch.DispatchResult;
+import nl.obs.web.dispatch.RedirectResult;
 import nl.obs.web.dispatch.SimpleResult;
 
 public class LoginCommand implements DispatchCommand {
@@ -21,7 +22,8 @@ public class LoginCommand implements DispatchCommand {
 		password = request.getParameter("password");
 
 		SimpleResult result = new SimpleResult(request, response);
-		result.setLocation("/login.jsp"); // give login view
+		result.setViewLocation("/login.jsp"); // give login view
+		result.setRedirectLocation("/");
 
 		// get the model from the session if it exits
 		AuthenticationModel authenticationModel = (AuthenticationModel) request
@@ -39,12 +41,7 @@ public class LoginCommand implements DispatchCommand {
 			request.getSession().setAttribute("auth", authenticationModel);
 
 			if (authenticationModel.isAuthenticated()) {
-				request.setAttribute("redirectMessage",
-						"You are logged in. Redirecting you, please wait...");
-				response.setHeader("Refresh", "5;url=/");
-				result.setLocation("/redirect.jsp"); // set the
-														// authenticated
-														// view
+				return new RedirectResult(result, "U bent succesvol ingelogd, een ogenblik geduld a.u.b...");
 			}
 
 		}

@@ -4,32 +4,38 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="order")
 public class Order {
-	
-	@Id    
-	@GeneratedValue (strategy=GenerationType.AUTO)
-	@Column(name="ID")
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID")
 	private int id;
-	@Column(name="orderdate")
+	@Column(name = "orderdate")
 	private Date date;
-	@Column(name="invoicenumber")
+	@Column(name = "invoicenumber")
 	private int invoiceNumber;
-	@Column(name="shipmentDate")
+	@Column(name = "shipmentDate")
 	private Date shipping;
-	@Column(name="totalorderamount")
+	@Column(name = "totalorderamount")
 	private int totalAmount;
-	
+
+	@ManyToOne
 	@JoinColumn(name = "Customer_ID")
 	private Customer customer;
-	
+
 	@OneToMany
-	@JoinColumn(name="Order_ID")
+	@JoinColumn(name = "Order_ID")
 	private List<OrderedBook> orderedBooks;
 
 	public int getId() {
@@ -79,4 +85,9 @@ public class Order {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
+
+	public List<OrderedBook> getOrderedBooks() {
+		return orderedBooks;
+	}
+
 }
