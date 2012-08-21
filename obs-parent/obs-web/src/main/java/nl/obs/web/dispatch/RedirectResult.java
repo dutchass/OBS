@@ -27,7 +27,7 @@ public class RedirectResult implements DispatchResult {
 			redirectTo = (String)request.getHeader("referer"); 
 			
 		
-		this.response.setHeader("Refresh", "5;url=/"+redirectTo);		
+		this.response.setHeader("Refresh", "3;url="+redirectTo);		
 	}
 
 	@Override
