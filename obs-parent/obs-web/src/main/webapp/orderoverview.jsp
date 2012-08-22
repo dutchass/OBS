@@ -9,6 +9,7 @@
 <obs:pageheader />
 <body>
 	<obs:userInfo />
+	<obs:customerInfo />
 	<c:choose>
 		<c:when test="${auth.authenticated == true}">
 			<div class="tableWrapper">

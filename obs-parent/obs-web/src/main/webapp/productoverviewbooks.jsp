@@ -28,6 +28,7 @@
 					<th>Auteur</th>
 					<th>ISBN</th>
 					<th>Prijs</th>
+					<th></th>
 				</tr>
 			</thead>
 
@@ -39,10 +40,9 @@
 						<td>${book.author}</td>
 						<td>${book.ISBNnumber}</td>
 						<td>${book.price}</td>
+						<td><a href="?action=addToCart&bookId=${book.id}" >+</a></td>
 					</tr>
 				</c:forEach>
-
-
 			</tbody>
 		</table>
 	</div>

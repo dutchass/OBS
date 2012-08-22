@@ -50,7 +50,7 @@ public class SimpleResult implements DispatchResult {
 	 * @see nl.obs.web.dispatch.DispatchResult#getLocation()
 	 */
 	@Override
-	public String getViewLocation() {
+	public String getLocation() {
 		return viewLocation;
 	}
 
@@ -84,12 +84,4 @@ public class SimpleResult implements DispatchResult {
 		this.response = response;
 	}
 
-	@Override
-	public String getRedirectLocation() {	
-		return redirectLocation;
-	}
-
-	public void setRedirectLocation(String redirectLocation) {
-		this.redirectLocation = redirectLocation;
-	}
 }

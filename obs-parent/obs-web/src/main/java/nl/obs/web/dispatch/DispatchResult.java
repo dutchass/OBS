@@ -5,6 +5,10 @@ import javax.servlet.http.HttpServletResponse;
 
 public interface DispatchResult {
 	
+	public enum Type {
+		FORWARD,REDIRECT
+	}
+	
 	/**
 	 * Gets the request.
 	 *
@@ -24,13 +28,8 @@ public interface DispatchResult {
 	 *
 	 * @return the location
 	 */
-	public String getViewLocation();
+	public String getLocation();
 	
-	/**
-	 * Gets the redirect location.
-	 *
-	 * @return the redirect location
-	 */
-	public String getRedirectLocation();
+	
 
 }

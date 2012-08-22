@@ -15,8 +15,8 @@
 <!-- inline css, will be moved to sep file eventually -->
 <style type="text/css">
 body {
-	font: 95% "Trebuchet MS", sans-serif;
-	margin: 50px;
+	font: 80% "Trebuchet MS", sans-serif;
+	margin: 20px;
 }
 </style>
 </head>

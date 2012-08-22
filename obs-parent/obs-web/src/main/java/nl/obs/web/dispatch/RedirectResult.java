@@ -8,28 +8,23 @@ public class RedirectResult implements DispatchResult {
 	private HttpServletRequest request;
 	private HttpServletResponse response;
 	
-	private String redirectLocation;
+	private Type type;
 		
 	public RedirectResult(DispatchResult result, String redirectMessage) {
-		this(result.getRequest(),result.getResponse(),redirectMessage,null);
+		this(result.getRequest(),result.getResponse(),redirectMessage);
 	}
 	
 	public RedirectResult(HttpServletRequest request,
-			HttpServletResponse response, String redirectMessage, String redirectTo) {
+			HttpServletResponse response, String redirectMessage) {
 		super();
 		this.request = request;
 		this.response = response;
-		this.redirectLocation = redirectTo;
+		this.type = type;
 		
 		this.request.setAttribute("redirectMessage",redirectMessage);
+
 		
-		if(redirectTo == null)
-			redirectTo = request.getParameter("referer");
-		if(redirectTo == null)
-			redirectTo = "";
-			
-		
-		this.response.setHeader("Refresh", "3;url="+redirectTo);		
+		this.response.setHeader("Refresh", "3;url="+request.getHeader("referer"));		
 	}
 
 	@Override
@@ -43,14 +38,7 @@ public class RedirectResult implements DispatchResult {
 	}
 
 	@Override
-	public String getViewLocation() {
+	public String getLocation() {
 		return "/redirect.jsp";
 	}
-
-	@Override
-	public String getRedirectLocation() {		
-		return redirectLocation;
-	}
-	
-	
 }

@@ -13,6 +13,6 @@ public class LogoutCommand implements DispatchCommand {
 	public DispatchResult execute(HttpServletRequest request,
 			HttpServletResponse response) {
 		
-		return new RedirectResult(request,response, "U bent uitgelogd, een ogenblik geduld a.u.b..." , "/");
+		return new RedirectResult(request,response, "U bent uitgelogd, een ogenblik geduld a.u.b...");
 	}
 }

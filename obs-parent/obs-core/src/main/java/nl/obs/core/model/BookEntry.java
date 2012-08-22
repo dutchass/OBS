@@ -36,4 +36,11 @@ public class BookEntry {
     public void setAmount(int amount) {
 	this.amount = amount;
     }
+
+	@Override
+	public String toString() {
+		return book.toString() + " (" +amount+")";
+	}
+    
+    
 }

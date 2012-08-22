@@ -78,6 +78,58 @@ public class Book {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+
+	@Override
+	public String toString() {
+		return author+ " " + title+" "+price;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ISBNnumber;
+		result = prime * result + ((author == null) ? 0 : author.hashCode());
+		result = prime * result + id;
+		result = prime * result
+				+ ((imagebookurl == null) ? 0 : imagebookurl.hashCode());
+		result = prime * result + price;
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Book other = (Book) obj;
+		if (ISBNnumber != other.ISBNnumber)
+			return false;
+		if (author == null) {
+			if (other.author != null)
+				return false;
+		} else if (!author.equals(other.author))
+			return false;
+		if (id != other.id)
+			return false;
+		if (imagebookurl == null) {
+			if (other.imagebookurl != null)
+				return false;
+		} else if (!imagebookurl.equals(other.imagebookurl))
+			return false;
+		if (price != other.price)
+			return false;
+		if (title == null) {
+			if (other.title != null)
+				return false;
+		} else if (!title.equals(other.title))
+			return false;
+		return true;
+	}
 	
 	
 
