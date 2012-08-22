@@ -11,7 +11,7 @@ public class RedirectResult implements DispatchResult {
 	private String redirectLocation;
 		
 	public RedirectResult(DispatchResult result, String redirectMessage) {
-		this(result.getRequest(),result.getResponse(),redirectMessage,result.getRedirectLocation());
+		this(result.getRequest(),result.getResponse(),redirectMessage,null);
 	}
 	
 	public RedirectResult(HttpServletRequest request,
