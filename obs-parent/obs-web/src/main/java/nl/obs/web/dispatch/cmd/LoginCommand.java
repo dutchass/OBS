@@ -23,8 +23,7 @@ public class LoginCommand implements DispatchCommand {
 
 		SimpleResult result = new SimpleResult(request, response);
 		result.setViewLocation("/login.jsp"); // give login view
-		result.setRedirectLocation("/");
-
+		
 		// get the model from the session if it exits
 		AuthenticationModel authenticationModel = (AuthenticationModel) request
 				.getSession().getAttribute("auth");
