@@ -1,0 +1,49 @@
+<class-diagram version="1.0.9" icons="true" automaticImage="JPEG" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" corner="BOTTOM_RIGHT" language="java" name="nl.obs.core.db.manager.UserManager" project="obs-core" 
+    file="/obs-core/src/main/java/nl/obs/core/db/manager/UserManager.java" binary="false">    
+    <position height="-1" width="-1" x="157" y="71"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="2" corner="BOTTOM_RIGHT" language="java" name="nl.obs.core.db.manager.CustomerManager" project="obs-core" 
+    file="/obs-core/src/main/java/nl/obs/core/db/manager/CustomerManager.java" binary="false">    
+    <position height="-1" width="-1" x="-147" y="80"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="3" corner="BOTTOM_RIGHT" language="java" name="nl.obs.core.db.manager.OrderManager" project="obs-core" 
+    file="/obs-core/src/main/java/nl/obs/core/db/manager/OrderManager.java" binary="false">    
+    <position height="-1" width="-1" x="-70" y="209"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="4" corner="BOTTOM_RIGHT" language="java" name="nl.obs.core.db.manager.DBUtils" project="obs-core" 
+    file="/obs-core/src/main/java/nl/obs/core/db/manager/DBUtils.java" binary="false">    
+    <position height="-1" width="-1" x="-113" y="340"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="5" corner="BOTTOM_RIGHT" language="java" name="nl.obs.core.db.manager.BookManager" project="obs-core" 
+    file="/obs-core/src/main/java/nl/obs/core/db/manager/BookManager.java" binary="false">    
+    <position height="-1" width="-1" x="140" y="357"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
