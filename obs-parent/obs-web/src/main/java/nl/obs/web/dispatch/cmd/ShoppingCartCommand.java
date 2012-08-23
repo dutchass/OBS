@@ -17,7 +17,7 @@ public class ShoppingCartCommand implements DispatchCommand {
 			HttpServletResponse response) {
 
 		ShoppingCartModel activeModel = ShoppingCartUtils.getShoppingCartModel(request.getSession());
-//		ShoppingCartModel emptyModel = ShoppingCartUtils.getShoppingCartModel(null);
+
 		
 		String action = request.getParameter("action");
 		if(action != null) {
