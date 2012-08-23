@@ -16,6 +16,12 @@ public class ShoppingCartUtils {
 		return model;
 	}
 	
+	public static void removeShoppingCartModel(HttpSession httpSession){
+	    httpSession.removeAttribute("shoppingCartModel");
+	    ShoppingCartModel model = new ShoppingCartModel();
+	    setShoppingCartModelInSession(model, httpSession);
+	}
+	
 	private static ShoppingCartModel getShoppingCartModelFromSession(
 			HttpSession session) {
 		return (ShoppingCartModel) session.getAttribute("shoppingCartModel");

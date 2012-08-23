@@ -5,11 +5,11 @@
 	<div>
 		<section>
 		<div>
-			<h1>${auth.customer.firstname} ${auth.customer.lastname}</h1>
-			<h3>${auth.customer.zipcode} ${auth.customer.city}</h3>
-			<h4>
+			<h3> Klantgegevens:</h3><br/>
+			${auth.customer.firstname} ${auth.customer.lastname}<br/>
+			${auth.customer.zipcode} ${auth.customer.city}<br/>
 				<a href="mailto:${auth.customer.email}">${auth.customer.email}</a>
-			</h4>
+			<br/>
 		</div>
 		</section>
 	</div>

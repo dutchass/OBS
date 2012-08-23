@@ -52,10 +52,6 @@ public class ShoppingCartModel {
 			// object
 		}
 
-		// klaar, duidelijk! Ok, dan mag je nu de functie removebook gaan maken
-		// let wel, ook daar kan het zijn dat je er 3 in je mandje hebt... en er
-		// 2 weg wil
-		// knikkeren... veel plezier :P
 	}
 
 	public void removeBook(Book book, int amount) {
@@ -69,7 +65,7 @@ public class ShoppingCartModel {
 
 				int newAmountInCart = amountInCart - amount;
 
-				if (newAmountInCart <= 0) { // idd!
+				if (newAmountInCart <= 0) { 
 					this.booksInCart.remove(bookEntry);
 
 				} else {
@@ -91,6 +87,17 @@ public class ShoppingCartModel {
 
 	}
 
+	
+	 public int getTotalPrice(){
+		int totalPrice = 0;
+		for (BookEntry bookEntry : this.booksInCart){
+		    Book currentBook = bookEntry.getBook();
+		    totalPrice = totalPrice + currentBook.getPrice();
+		}
+		return totalPrice;
+	 }
+	
+	
 	public void addBook(Book book) {
 		this.addBook(book,1);
 	}

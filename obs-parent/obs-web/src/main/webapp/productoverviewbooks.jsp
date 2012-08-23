@@ -11,12 +11,13 @@
 <body>
 	<obs:userInfo />
 	<obs:customerInfo />
-
+	
+	
 	<div class="tableWrapper">
-		<table id="myTable">
+		<table id="myTable" border="1">
 			<thead>
 				<tr>
-					<th colspan="5">Productoverzicht boeken</th>
+					<th colspan="5">Productoverzicht boeken <br/></th>
 				</tr>
 				<tr>
 					<th></th>
@@ -24,7 +25,7 @@
 					<th>Auteur</th>
 					<th>ISBN</th>
 					<th>Prijs</th>
-					<th></th>
+					<th>Toevoegen</th>
 				</tr>
 			</thead>
 
@@ -36,7 +37,7 @@
 						<td>${book.author}</td>
 						<td>${book.ISBNnumber}</td>
 						<td>${book.price}</td>
-						<td><a href="?action=addToCart&bookId=${book.id}" >+</a></td>
+						<td><a href="?action=addToCart&bookId=${book.id}" >Toevoegen</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -49,8 +50,6 @@
 			});
 		});
 	</script>
-	
-	
 </body>
 </html>
 
