@@ -6,15 +6,11 @@
 <!DOCTYPE html />
 
 <html>
-<obs:head title="Productoverzicht boeken"></obs:head>
+<obs:head title="Productoverzicht boeken" />
+<obs:pageheader />
 <body>
-	<script type="text/javascript">
-		$(function() {
-			$(".resizeme").aeImageResize({
-				width : 75
-			});
-		});
-	</script>
+	<obs:userInfo />
+	<obs:customerInfo />
 
 	<div class="tableWrapper">
 		<table id="myTable">
@@ -46,6 +42,13 @@
 			</tbody>
 		</table>
 	</div>
+	<script type="text/javascript">
+		$(function() {
+			$(".resizeme").aeImageResize({
+				width : 75
+			});
+		});
+	</script>
 	
 	
 </body>

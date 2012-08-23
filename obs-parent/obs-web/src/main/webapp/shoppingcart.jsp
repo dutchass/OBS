@@ -5,10 +5,11 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<title>OBS Winkelwagen</title>
-</head>
+<obs:head title="Winkewagenoverzicht" />
+<obs:pageheader />
 <body>
+	<obs:userInfo />
+	<obs:customerInfo />
 	<table border="1" width="85%" id="myTable">
 		<col style="width: 10%">
 		<col style="width: 45%">
