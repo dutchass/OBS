@@ -7,24 +7,22 @@ public class RedirectResult implements DispatchResult {
 
 	private HttpServletRequest request;
 	private HttpServletResponse response;
-	
-	private Type type;
-		
-	public RedirectResult(DispatchResult result, String redirectMessage) {
-		this(result.getRequest(),result.getResponse(),redirectMessage);
+			
+	public RedirectResult(DispatchResult result, String redirectMessage, String redirectTo) {
+		this(result.getRequest(),result.getResponse(),redirectMessage, redirectTo);
 	}
 	
 	public RedirectResult(HttpServletRequest request,
-			HttpServletResponse response, String redirectMessage) {
+			HttpServletResponse response, String redirectMessage, String redirectTo) {
 		super();
 		this.request = request;
 		this.response = response;
-		this.type = type;
 		
-		this.request.setAttribute("redirectMessage",redirectMessage);
-
+		if(redirectTo == null)
+			redirectTo = request.getHeader("referer");
 		
-		this.response.setHeader("Refresh", "3;url="+request.getHeader("referer"));		
+		this.request.setAttribute("redirectMessage",redirectMessage);		
+		this.response.setHeader("Refresh", "3;url="+redirectTo);		
 	}
 
 	@Override

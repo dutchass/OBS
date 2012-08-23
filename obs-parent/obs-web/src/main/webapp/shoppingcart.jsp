@@ -56,7 +56,7 @@
 	<br>
 	<table>
 	<td><a href="?action=emptyCart" >Winkelwagen leegmaken</a> &nbsp;</td>
-	<td><td><a href="?action=addToCart&bookId=${book.id}" >Afronden order</a></td> 
+	<td><td><a href="/confirmation/">Afronden order</a></td> 
 	</table>
 </body>
 </html>

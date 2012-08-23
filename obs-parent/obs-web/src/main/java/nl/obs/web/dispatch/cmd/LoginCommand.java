@@ -25,22 +25,19 @@ public class LoginCommand implements DispatchCommand {
 		result.setViewLocation("/login.jsp"); // give login view
 		
 		// get the model from the session if it exits
-		AuthenticationModel authenticationModel = (AuthenticationModel) request
-				.getSession().getAttribute("auth");
+		AuthenticationModel authenticationModel = AuthenticationUtils.getAuthenticationModel(request.getSession());
 		// check if we have a model and if it's authenticated, if not we use the
 		// DB
 		if ((authenticationModel == null || !authenticationModel
-				.isAuthenticated()) && username != null) {
-			
-			authenticationModel = UserManager.authenticateCustomer(username, password); // do
-																				// db
-																				// work
+				.isAuthenticated()) && username != null) {			
+			authenticationModel = AuthenticationUtils.authenticate(username, password, request.getSession());
 		}
 		if (authenticationModel != null) {
-			request.getSession().setAttribute("auth", authenticationModel);
-
 			if (authenticationModel.isAuthenticated()) {
-				return new RedirectResult(result, "U bent succesvol ingelogd, een ogenblik geduld a.u.b...");
+				String redirect = request.getHeader("referer");
+				if(redirect == null || redirect.isEmpty())
+					redirect = "/";
+				return new RedirectResult(result, "U bent succesvol ingelogd, een ogenblik geduld a.u.b...",redirect);
 			}
 
 		}

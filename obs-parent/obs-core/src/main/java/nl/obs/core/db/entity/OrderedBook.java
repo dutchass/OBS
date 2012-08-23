@@ -20,6 +20,10 @@ public class OrderedBook {
 	@ManyToOne
 	@JoinColumn(name="Book_ID",insertable=false, updatable=false)
 	private Book book;
+	
+	@ManyToOne
+	@JoinColumn(name="Order_ID",insertable=false, updatable=false)
+	private Order order;
 		
 	public Book getBook() {
 		return book;
@@ -27,6 +31,14 @@ public class OrderedBook {
 
 	public void setBook(Book book) {
 		this.book = book;
+	}	
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 
 	public OrderBookId getOrderBookId() {
@@ -51,32 +63,41 @@ public class OrderedBook {
 		private static final long serialVersionUID = -8883434588897492909L;
 		
 		@Column(name = "Order_ID")
-		private int orderId;
+		private int order;
+		
 		@Column(name = "Book_ID")
-		private int bookId;
-
-		public int getOrderId() {
-			return orderId;
+		private int book;
+		
+		public OrderBookId(){}
+		
+		public OrderBookId(int order, int book) {
+			super();
+			this.order = order;
+			this.book = book;
 		}
 
-		public void setOrderId(int orderId) {
-			this.orderId = orderId;
+		public int getOrder() {
+			return order;
 		}
 
-		public int getBookId() {
-			return bookId;
+		public void setOrder(int order) {
+			this.order = order;
 		}
 
-		public void setBookId(int bookId) {
-			this.bookId = bookId;
+		public int getBook() {
+			return book;
+		}
+
+		public void setBook(int book) {
+			this.book = book;
 		}
 
 		@Override
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + bookId;
-			result = prime * result + orderId;
+			result = prime * result + book;
+			result = prime * result + order;
 			return result;
 		}
 
@@ -89,12 +110,16 @@ public class OrderedBook {
 			if (getClass() != obj.getClass())
 				return false;
 			OrderBookId other = (OrderBookId) obj;
-			if (bookId != other.bookId)
+			if (book != other.book)
 				return false;
-			if (orderId != other.orderId)
+			if (order != other.order)
 				return false;
 			return true;
 		}
+
+		
+
+		
 
 	}
 

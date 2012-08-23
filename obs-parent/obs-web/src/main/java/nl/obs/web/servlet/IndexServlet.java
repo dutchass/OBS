@@ -15,6 +15,7 @@ import nl.obs.web.dispatch.SimpleCommand;
 import nl.obs.web.dispatch.cmd.BooksOverviewCommand;
 import nl.obs.web.dispatch.cmd.LoginCommand;
 import nl.obs.web.dispatch.cmd.LogoutCommand;
+import nl.obs.web.dispatch.cmd.OrderConfirmationCommand;
 import nl.obs.web.dispatch.cmd.OrderOverviewCommand;
 import nl.obs.web.dispatch.cmd.ShoppingCartCommand;
 
@@ -49,6 +50,7 @@ public class IndexServlet extends HttpServlet {
 		dispatchHelper.register("/books/", new BooksOverviewCommand());
 		dispatchHelper.register("/orders/", new OrderOverviewCommand());
 		dispatchHelper.register("/cart/", new ShoppingCartCommand());
+		dispatchHelper.register("/confirmation/", new OrderConfirmationCommand());
 
 	}
 

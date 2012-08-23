@@ -90,4 +90,10 @@ public class Order {
 		return orderedBooks;
 	}
 
+	public void setOrderedBooks(List<OrderedBook> orderedBooks) {
+		this.orderedBooks = orderedBooks;
+	}
+	
+	
+
 }
